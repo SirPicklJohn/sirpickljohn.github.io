@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://github.com/blog</id>
+    <title>My Site Blog</title>
+    <updated>2024-05-28T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://github.com/blog"/>
+    <subtitle>My Site Blog</subtitle>
+    <icon>https://github.com/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[First Blog Post]]></title>
+        <id>https://github.com/blog/first-blog-post</id>
+        <link href="https://github.com/blog/first-blog-post"/>
+        <updated>2024-05-28T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Lorem ipsum dolor sit amet...]]></summary>
+        <content type="html"><![CDATA[<p>Lorem ipsum dolor sit amet...</p>
+<p>...consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content>
+        <author>
+            <name>Ayden Parsons</name>
+            <uri>https://github.com/SirPicklJohn.github.io</uri>
+        </author>
+        <category label="hi" term="hi"/>
+        <category label="Docusaurus" term="Docusaurus"/>
+    </entry>
+</feed>
