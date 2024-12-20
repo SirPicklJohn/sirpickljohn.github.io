@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://github.com/blog</id>
-    <title>My Site Blog</title>
+    <title>Ayden Parsons (SirPicklJohn) Blog</title>
     <updated>2024-05-28T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://github.com/blog"/>
-    <subtitle>My Site Blog</subtitle>
+    <subtitle>Ayden Parsons (SirPicklJohn) Blog</subtitle>
     <icon>https://github.com/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[First Blog Post]]></title>
@@ -19,7 +19,6 @@
             <name>Ayden Parsons</name>
             <uri>https://github.com/SirPicklJohn.github.io</uri>
         </author>
-        <category label="hi" term="hi"/>
-        <category label="Docusaurus" term="Docusaurus"/>
+        <category label="Cyber Threat Intelligence" term="Cyber Threat Intelligence"/>
     </entry>
 </feed>
