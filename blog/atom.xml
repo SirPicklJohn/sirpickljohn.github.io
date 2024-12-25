@@ -2,24 +2,76 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://github.com/blog</id>
     <title>Ayden Parsons (SirPicklJohn) Blog</title>
-    <updated>2024-05-28T00:00:00.000Z</updated>
+    <updated>2023-09-01T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://github.com/blog"/>
     <subtitle>Ayden Parsons (SirPicklJohn) Blog</subtitle>
     <icon>https://github.com/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[First Blog Post]]></title>
-        <id>https://github.com/blog/first-blog-post</id>
-        <link href="https://github.com/blog/first-blog-post"/>
-        <updated>2024-05-28T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Lorem ipsum dolor sit amet...]]></summary>
-        <content type="html"><![CDATA[<p>Lorem ipsum dolor sit amet...
-Under construction! Data is still being migrated!</p>
-<p>...consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content>
+        <title type="html"><![CDATA[The [Wonderful] Start to the Season of Rigor...]]></title>
+        <id>https://github.com/blog/start-of-season-of-rigor</id>
+        <link href="https://github.com/blog/start-of-season-of-rigor"/>
+        <updated>2023-09-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[(This blog post was migrated from my first, old, raw HTML/CSS/JS-only website.)]]></summary>
+        <content type="html"><![CDATA[<p>(<em>This blog post was migrated from my first, old, raw HTML/CSS/JS-only website.</em>)</p>
+<p>This post primarily covered some of my cool technical accomplishments during the intense MGHSCC CTF, as well as some other brief cyber or language-related activities. These all happened during a several-month period of intense productivity that I dubbed "The Season of Rigor".</p>
+<hr>
+<p>SOME of what is and what will be going on in my computery-endeavors:</p>
+<ul>
+<li>Signed up for the Fall 2023 NCL CTF</li>
+<li>Joined OSINT-FR, and the DLI French Course</li>
+<li>Hitting "high dollar" challenges in Cyberstart, racking up points for the final stretch of the GHSCC season</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="recent-governors-high-school-cyber-challenge--cyberstart-highlights">Recent Governor's High School Cyber Challenge / Cyberstart Highlights<a href="https://github.com/blog/start-of-season-of-rigor#recent-governors-high-school-cyber-challenge--cyberstart-highlights" class="hash-link" aria-label="Direct link to Recent Governor's High School Cyber Challenge / Cyberstart Highlights" title="Direct link to Recent Governor's High School Cyber Challenge / Cyberstart Highlights">​</a></h3>
+<p><img decoding="async" loading="lazy" alt="brute_force.png" src="https://github.com/assets/images/quickbrute_results-2557968a92e3d701d0b867e98e4fd8d5.png" width="291" height="211" class="img_ev3q"></p>
+<p>^Results of my following bruteforce script (with explanations):</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">#!/bin/bash</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># I chose to use bash after I had some weird trouble with python</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Prompt: The program "prog-l0bar" takes an argument that is a four digit secret code. Crack it with a script.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">for i in {0000..9999}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">do</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> ./prog-l0bar $i #pipes output and/or variable without "|"</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">done</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># that's it!!</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>This was a super simple but cheeky-feeling way to finish a challenge :)</p>
+<p>Some other things I've done to boost up to 82500 points (Rising 6000 or so points in just today, clearing the entirety of HQ level 9 [no easy feat!], now beating 8th place in the final 2018 Girls Go Cyberstart competition [ though I don't know how that translates to the GHSCC], and being 72.98% done [181/248 total challenges] with Cyberstart America) include Steganography with binwalk, more reverse engineering, and two particularly fun challenges that required some fun maneuvering:</p>
+<p><img decoding="async" loading="lazy" alt="find+grep=king.png" src="https://github.com/assets/images/find+grep=king-dddc05fba7b59b185caabdbaa2c1b28a.png" width="1558" height="1140" class="img_ev3q"></p>
+<p>^Here, I had to ssh into a foreign system and find a nondescript file that was created November 22nd, 2015 at 20:00 (with no other information). After multiple tries and research, I found that I could use the deadly "find | grep" combo once again :)</p>
+<p><img decoding="async" loading="lazy" alt="find_the_img_in_elfs_p1.png" src="https://github.com/assets/images/find_the_img_in_elfs_p1-2f87360145d34e626a73f5bf8467a0b8.png" width="907" height="1037" class="img_ev3q"></p>
+<p>^The next challenge (the one I'm most proud of, and have probably cheesed/circumvented the hardest) required me to ssh into a remote system (remember, this gets rid of most fancy tools on your home system), and find an image file in a ginormous mix of junk files (with all of the files ends stripped).</p>
+<p>This was no beginner level challenge, and you couldn't just cheesily use "strings" or "grep" to find some string that searched the file system for 'flag:' in one of the files, as the flag is in the actual rendered image. So, instead, I cheesily used "file -i *" to find the odd one out in the folder with all the junk files in it. That was part one of the challenge...</p>
+<p><img decoding="async" loading="lazy" alt="find_the_img_in_elfs_p2_results.png" src="https://github.com/assets/images/find_the_img_in_elfs_p2_results-4ed6a379b61d27b1b28d07a1d9151495.png" width="1594" height="875" class="img_ev3q"></p>
+<p>^Part two of the challenge required me actually rendering the image file to get the flag. But, because I was ssh'd into a limited remote system, it wasn't as easy as opening it with xdg-open, right clicking on it, or using an image viewer. So, I had to go throught he process of learning how to use the "scp" command to go from my home system, input the exact location of the file I just found with "file -i *" on the remote system, and take it back to my home system, where I could then render it with xdg-open. Voilà, the flag is the serial number (SN:0207F9) :)</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="osint-fr-and-dli">OSINT-FR and DLI:<a href="https://github.com/blog/start-of-season-of-rigor#osint-fr-and-dli" class="hash-link" aria-label="Direct link to OSINT-FR and DLI:" title="Direct link to OSINT-FR and DLI:">​</a></h3>
+<p><a href="https://osintfr.com/en/home/" target="_blank" rel="noopener noreferrer">OSINT-FR Home Page Link</a>
+I joined a global community of people curious about OSINT, both beginners and (primarily) super-whiz professionals and cyber ninjas, who do everything from develop powerful tools, share resources (online courses, neat articles, etc), tackle issues (e.g. disinformation, child abuse), and more! Au moins, ils parlent Français, et je peux les utiliser pour l'améliorer (particulierement avec la vocabulaire de Cybersécurité, et le web).</p>
+<p>I also found some free resources online due to some OSINT of my own :)
+Those being free "FSI" (Foreign Service Institute) and "DLI" (Defense Language Institute) resources online for French, Spanish, and a myriad of other languages. I researched and judged the DLI course to suit my needs more, and will be partaking in that for the foreseeable future (it's designed to be 15-20 work weeks of 6 hour class days on the language).</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="fall-2023-ncl-ctf">Fall 2023 NCL CTF:<a href="https://github.com/blog/start-of-season-of-rigor#fall-2023-ncl-ctf" class="hash-link" aria-label="Direct link to Fall 2023 NCL CTF:" title="Direct link to Fall 2023 NCL CTF:">​</a></h3>
+<p><a href="https://nationalcyberleague.org/" target="_blank" rel="noopener noreferrer">NCL Home Page Link</a>
+Having participated in the Spring and Fall 2021 Individual Games, and the Fall 2021 Team Game, I can tell you that NCL is no joke. It has beginner to ultra-hard challenges in OSINT, Log Analysis, Network Traffic Analysis, Cryptography, Scanning, Forensics, Password Cracking, Enumeration and Exploitation, and Web Application Security (website hacking). This is going to be quite the competition, with me knowing much, much, MUCH more than I did than the last time I participated in this CTF. It's going to be fun :)</p>]]></content>
         <author>
             <name>Ayden Parsons</name>
             <uri>https://github.com/SirPicklJohn.github.io</uri>
         </author>
-        <category label="Cyber Threat Intelligence" term="Cyber Threat Intelligence"/>
+        <category label="From Old Website" term="From Old Website"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The GHSCC CTF, Cyberstart America, Bruteforcing, and other fun :)]]></title>
+        <id>https://github.com/blog/ghscc-ctf-cyberstart-america-bruteforcing</id>
+        <link href="https://github.com/blog/ghscc-ctf-cyberstart-america-bruteforcing"/>
+        <updated>2023-06-29T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[(This blog post was migrated from my first, old, raw HTML/CSS/JS-only website.)]]></summary>
+        <content type="html"><![CDATA[<p>(<em>This blog post was migrated from my first, old, raw HTML/CSS/JS-only website.</em>)</p>
+<p>This post recounted my intense efforts towards winning the Michigan Governor's High School Cyber Challenge CTF, in addition to reflecting on Cyberstart America.</p>
+<hr>
+<p><img decoding="async" loading="lazy" alt="hydra_attack.jpg" src="https://github.com/assets/images/hydra_attack-12061675d5ca21196ea46e13d175db95.jpg" width="3024" height="3227" class="img_ev3q"></p>
+<p>Over the last few days (in addition to lots and lots of Eagle Rank work), I've been brushing up on my cyber skills in the <a href="https://ghscc-michigan.cyberstart.com/" target="_blank" rel="noopener noreferrer">"Michigan Governor's High School Cyber Challenge"</a> (GHSCC), run on the Cyberstart America platform.</p>
+<p>I had a lot of extra points from previous Cyberstart America seasons (where I scored high enough to gain access to the NCSF CTF, then won access to the SEC275: Foundations course from the SANS Institute [then passing the final exam, <a href="https://www.credly.com/badges/4c25f83b-4e9a-49af-acd7-6d99773b868f" target="_blank" rel="noopener noreferrer">becoming certified</a>]), but through the past couple of days I've jumped from 30,000 or so points, to over 52,000 points (each challenge at the levels I'm currently playing at are 600-700 points).</p>
+<p>In the GHSCC, the top 10 teams (I'm flying solo :) ) in the Cyberstart Game, when the season ends, will win access to the 2023 SANS Core NetWars Cyber Range/CTF (which I have a keen eye upon winning [not really for any good reason, except it's {hopefully} more intense than anything I've done in a cyber competition before]). I looked up previous high scores from Cyberstart America to see how many points I needed to earn to be competitive, and found this photo:</p>
+<p><img decoding="async" loading="lazy" alt="Cyberstart-Round-2-5" src="https://github.com/assets/images/Cyberstart-Round-2-5-0b097d37420ffb8ad6fa4e034f357225.png" width="1024" height="768" class="img_ev3q"></p>
+<p>From doing socket programming with Python, encoding and decoding, decrypting, website hacking, brute force password hacking with Hydra (referencing the photo at the top of this post), brute force zipfile cracking and directory scanning with Python scripts, to SQL and command injection, I've been putting in the work.</p>
+<p><em>Thursday, 20:42 - J'aime utiliser les ordinateurs comme ça pour m'amuser.</em></p>
+<p>21:40 - I just found the <a href="https://medium.com/girls-go-cyberstart/top-100-overall-final-e232859e1913" target="_blank" rel="noopener noreferrer">final list</a> for a series of Cyberstart ranking lists I found earlier, and this is suddenly terrifying. Top score is 117,700 (approx 170 challenges, give or take a few), and score ten is 75,900 (DANG). I have a lot more work ahead of me ;-; (but, as always, "we do not do these things because they are easy; we do them, because they are hard.")</p>
+<hr>
+<p>Note from the future: I didn't end up going anywhere or winning anything special from this <em>because</em> I was flying solo, and the competition simply ignored all solo participants and dropped them like litter. A couple of people were frustrated at that. But hey, I still had fun and learned a lot :)</p>]]></content>
+        <author>
+            <name>Ayden Parsons</name>
+            <uri>https://github.com/SirPicklJohn.github.io</uri>
+        </author>
+        <category label="From Old Website" term="From Old Website"/>
     </entry>
 </feed>
