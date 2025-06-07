@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-cti-investigations/ghost-ransomware-gang-analysis-and-new-insights" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">&quot;New Insights on the Ghost Ransomware Gang and their Partiular Success&quot; | Ayden Parsons (SirPicklJohn)</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://github.com/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://github.com/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://github.com/docs/cti-investigations/ghost-ransomware-gang-analysis-and-new-insights"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="&quot;New Insights on the Ghost Ransomware Gang and their Partiular Success&quot; | Ayden Parsons (SirPicklJohn)"><meta data-rh="true" name="description" content="This cyber threat intelligence investigation hunts ghosts - seeking to answer why the Ghost/Cring ransomware gang is so successful at eluding security researchers and being profitable, especially when they avoid phishing in favor of targeting known-vulnerabilities in internet-facing systems."><meta data-rh="true" property="og:description" content="This cyber threat intelligence investigation hunts ghosts - seeking to answer why the Ghost/Cring ransomware gang is so successful at eluding security researchers and being profitable, especially when they avoid phishing in favor of targeting known-vulnerabilities in internet-facing systems."><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://github.com/docs/cti-investigations/ghost-ransomware-gang-analysis-and-new-insights"><link data-rh="true" rel="alternate" href="https://github.com/docs/cti-investigations/ghost-ransomware-gang-analysis-and-new-insights" hreflang="en"><link data-rh="true" rel="alternate" href="https://github.com/docs/cti-investigations/ghost-ransomware-gang-analysis-and-new-insights" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Ayden Parsons (SirPicklJohn) RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Ayden Parsons (SirPicklJohn) Atom Feed"><link rel="stylesheet" href="/assets/css/styles.3c6bd939.css">
+<script src="/assets/js/runtime~main.59eb8a59.js" defer="defer"></script>
+<script src="/assets/js/main.0b78b263.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/pickl.svg" alt="Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/pickl.svg" alt="Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Ayden Parsons / SirPicklJohn &lt;</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/intro">Projects Directory</a><a class="navbar__item navbar__link" href="/blog">Blog</a><a href="https://infophreak.com/author/sirpickljohn/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Infophreak<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/SirPicklJohn/sirpickljohn.github.io" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite" aria-pressed="false"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/intro">THE PROJECTS DIRECTORY</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/toolkits">TOOLKITS</a><button aria-label="Expand sidebar category &#x27;TOOLKITS&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/docs/category/cti-investigations-and-reports">CTI Investigations and Reports</a><button aria-label="Collapse sidebar category &#x27;CTI Investigations and Reports&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cti-investigations/deeper-insights-into-telco-hacks-and-abc">&quot;Deeper Insights into the Recent U.S. Telecom Provider Hacks, and Chinese APT Activity&quot;</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cti-investigations/recap-of-cybersecurity">&quot;2024 Recap of Cybersecurity, with Insights for the Future&quot;</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cti-investigations/demonstration-of-modern-LLM-abuse">&quot;A Demonstration of the Potential for Modern LLM Abuse by Threat Actors&quot;</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/cti-investigations/ghost-ransomware-gang-analysis-and-new-insights">&quot;New Insights on the Ghost Ransomware Gang and their Partiular Success&quot;</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/--">  </a><button aria-label="Expand sidebar category &#x27;  &#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/docs/category/cti-investigations-and-reports"><span itemprop="name">CTI Investigations and Reports</span></a><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">&quot;New Insights on the Ghost Ransomware Gang and their Partiular Success&quot;</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>&quot;New Insights on the Ghost Ransomware Gang and their Partiular Success&quot;</h1></header>
+<p><em>This cyber threat intelligence investigation hunts ghosts</em> - seeking to answer why the Ghost/Cring ransomware gang is so successful at eluding security researchers and being profitable, especially when they avoid phishing in favor of targeting known-vulnerabilities in internet-facing systems.</p>
+<p>Mar 09, 2025 ~ 24 min read</p>
+<p>Original Infophreak Blog: <a href="https://infophreak.com/new-insights-on-the-ghost-ransomware-gang-and-their-peculiar-success/" target="_blank" rel="noopener noreferrer">https://infophreak.com/new-insights-on-the-ghost-ransomware-gang-and-their-peculiar-success/</a></p>
+<p><img decoding="async" loading="lazy" alt="red-cyber-ghosts-2.jpg" src="/assets/images/red-cyber-ghosts-2-421d7c6472a5b59396ec6a7332b061f0.jpg" width="640" height="640" class="img_ev3q"></p>
+<p>&quot;DontCry :)&quot; - Text found in a Ghost ransomware executable</p>
+<h1><em><em>Why is the Ghost Ransomware Gang, in particular, so successful?</em></em></h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="introduction">Introduction<a href="#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction">​</a></h2>
+<p>I&#x27;m proud to present you with extensive insights and information, including original findings not included in the latest <a href="https://www.cisa.gov/sites/default/files/2025-02/aa25-050a-stopransomware-ghost-cring-ransomware.pdf" target="_blank" rel="noopener noreferrer">FBI/CISA/MS-ISAC advisory</a>, on the Ghost/Cring ransomware gang! While reading articles on the group, I had one burning question that formed the basis of my following investigation:</p>
+<blockquote>
+<p><strong>Why is the Ghost ransomware gang, in particular, so successful</strong>, especially if they are only exploiting old, known vulnerabilities?</p>
+</blockquote>
+<p>For context, on February 19th, 2025, the FBI and CISA released a joint cybersecurity advisory on the Ghost (also known as Cring) ransomware gang (<a href="https://www.cisa.gov/sites/default/files/2025-02/aa25-050a-stopransomware-ghost-cring-ransomware.pdf?ref=infophreak.com" target="_blank" rel="noopener noreferrer">linked here</a>). Reports and news articles say that Ghost has victims in over 70 countries, specifically exploits internet-facing applications/devices with known and unpatched vulnerabilities (some over a decade old!), and is also known as Cring, Cring Hand, RSA Virus, Crypt3r, Phantom, Strike, Hello, Wickrme, HsHarada, and Rapture (<em>you will see why this group goes by so many different names - attribution has been incredibly difficult</em>).</p>
+<p><em>For the most intriguing and important part of my investigation, skip to the &quot;What Makes Ghost Uniquely Successful?&quot; section.</em></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-does-ghost-do-differently-how-does-it-compare-to-other-gangs">What Does Ghost Do Differently? How Does It Compare To Other Gangs?<a href="#what-does-ghost-do-differently-how-does-it-compare-to-other-gangs" class="hash-link" aria-label="Direct link to What Does Ghost Do Differently? How Does It Compare To Other Gangs?" title="Direct link to What Does Ghost Do Differently? How Does It Compare To Other Gangs?">​</a></h2>
+<p>First, Ghost has some direct contradictions to the typical tactics, techniques, and procedures (TTPs) of other modern ransomware gangs:</p>
+<ul>
+<li><strong>Limited Data Exfiltration</strong>: Ghost threatens double-extortion (i.e., ransoming <em>and</em> threatening to leak stolen data), but there is no evidence suggesting that they actually exfiltrate that much data. When Ghost exfiltrates data, it has reportedly always been under 100 gigabytes (which, considering the amount of data that modern companies routinely store and process now, is not much). It is common behavior for ransomware gangs to regularly exfiltrate <em>and</em> leak terabytes of data, and sometimes, they even threaten <em>triple</em> extortion (which involves making threats directly to the end-users [students, patients, parents, etc.] who have had their data compromised in order to put pressure on the compromised organization to pay the ransom). However, Ghost primarily focuses on encrypting and ransoming their victims&#x27; data, targeting networks with less-robust security mechanisms, and severely impeding the victim&#x27;s ability to defend, respond to, and recover from the attack.</li>
+<li><strong>Inconsistency and Fluidity</strong>: Ghost does not limit itself to a set of defined ransomware payloads, file extensions, ransom notes, or ransom contact email addresses. Ghost has used the <code>Cring.exe</code>, <code>Ghost.exe</code>, <code>Elysium0.exe</code>, <code>Elysium.exe</code>, <code>ip.txt</code> (disguised EXE), <code>NoNet.txt</code> (disguised EXE), and <code>Locker.exe</code> executable ransomware payloads before, at least 9-26+ different encrypted file extensions, at least 9 different ransom notes, and at least 41 different email addresses used to contact them. See the &quot;Aggregated IoCs&quot; section at the end of this report for these lists.</li>
+<li><strong>Minimal and Short Persistence</strong>, If Any At All: The FBI/CISA report detailed that &quot;[p]ersistence is not a major focus for Ghost actors, as they typically only spend a few days on victim networks. In multiple instances, they have been observed proceeding from initial compromise to the deployment of ransomware within the same day&quot;. While this led me to believe that Ghost was very unique for this speed, the &quot;Time-To-Ransom&quot; (TTR) measurement (i.e., the time it takes ransomware operators to deploy ransomware after initially gaining access) has actually been <em>dropping</em> among ransomware groups over the past few years. Thus, while Ghost is not particularly fast or slow when comparing their TTR with higher-profile ransomware gangs (which is a hard comparison to make, particularly as the FBI/CISA report does not give specific statistics, and interpreting those statistics definitively is difficult or impossible), <strong>it is still massively useful for security personnel to know that ransomware is trending towards ultra-low (&lt; 2 days) TTRs</strong>.<!-- -->
+<ul>
+<li>Statistics to Support This: From 2022-2023, a frequently-cited Secureworks/Sophos report found that the median dwell time of ransomware operators had dropped from 4.5 days to just 1 day, with 10% of cases showing an even smaller dwell time of only five hours (<a href="https://www.secureworks.com/about/press/ransomware-dwell-time-hits-low-of-24-hours?ref=infophreak.com" target="_blank" rel="noopener noreferrer">linked source</a>). Throughout 2024, Huntress Labs found that the average TTR of ransomware groups was 16.88 hours (ranging from an average of 4.22 to 43.42 hours, up to preference of the group as to whether they liked a more slow and deliberate or rapid smash-and-grab approach) (<a href="https://insight.scmagazineuk.com/dwell-time-reduced-further-as-attackers-infect-in-four-hours?ref=infophreak.com" target="_blank" rel="noopener noreferrer">article link, direct PDF link</a>).</li>
+</ul>
+</li>
+<li><strong>Lack of Domain Registration:</strong> Ghost is not known to register domains, and instead directly hardcode their C2 server&#x27;s address in their payloads to download and execute Cobalt Strike Beacon malware. This is likely due to the short-lived nature/TTR of Ghost&#x27;s operations, the desire to not leave a digital footprint, and the fact that Ghost does not typically use social engineering attacks or lookalike phishing domains to compromise its victims.</li>
+<li><strong><em>Specifically</em> Exploiting Known Vulnerabilities</strong> in Public-Facing Applications and Devices: While the earliest ransomware payloads from Cring (before it was known as Ghost) sometimes used phishing-based methods of delivery, at least according to old and potentially unreliable or generalized forums, the FBI and CISA have found that Ghost rarely uses social engineering or phishing tactics that are <em>ubiquitous</em> amongst cybercriminals and ransomware operators. Ghost strongly prefers to only target known, unpatched vulnerabilities in public-facing applications and devices, such as firewalls, RDP (port 3398), FortiGate VPN gateways, SMB (port 445), FTP (port 21), and end-of-life ColdFusion servers. The following CVE&#x27;s are known to be exploited by Ghost:<!-- -->
+<ul>
+<li>CVE-2018-13379</li>
+<li>CVE-2009-3960</li>
+<li>CVE-2010-2861</li>
+<li>CVE-2019-0604</li>
+<li>CVE-2019-5591 (source: Japanese Trend Micro Report)</li>
+<li>CVE-2020-12812 (source: Japanese Trend Micro Report)</li>
+<li>CVE-2021-34473 (Part of ProxyShell Attack Chain)</li>
+<li>CVE-2021-34523 (Part of ProxyShell Attack Chain)</li>
+<li>CVE-2021-31207 (Part of ProxyShell Attack Chain)</li>
+<li>Note that, in the autumn months before Ghost started operations in December 2020, there was a 6.7GB database of FortiGate VPN Gateway devices vulnerable to CVE-2018-13379. Ghost threat actors could have purchased this list, simply scanned IP addresses manually to identify vulnerable devices, or both.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-makes-ghost-uniquely-successful">What Makes Ghost Uniquely Successful?<a href="#what-makes-ghost-uniquely-successful" class="hash-link" aria-label="Direct link to What Makes Ghost Uniquely Successful?" title="Direct link to What Makes Ghost Uniquely Successful?">​</a></h2>
+<p>This part of the report formed the crux of my investigation, where I not only sought to answer why Ghost was successful in terms of executing attacks and making a profit, but also in evading detection and making it hard to attribute activity to them - remember, this nebulous gang is known by <em><strong>eleven</strong></em> different names, and there still is a lot that isn&#x27;t known about them!</p>
+<p>My investigation suggested that all of the following factors, especially when working in tandem with each other, massively contribute to Ghost&#x27;s success in both their profitability and their ability to give researchers and prosecutors a headache:</p>
+<ul>
+<li>Threatening double-extortion, while not actually exfiltrating that much data</li>
+<li>&quot;Moving quickly&quot; by taking mere hours or days to complete infiltration, privilege escalation and lateral movement, and final ransomware deployment</li>
+<li>Tailoring attacks and demands to the victim</li>
+<li>Demanding &quot;reasonable&quot; amounts of cryptocurrency equating to tens to hundreds of thousands of dollars</li>
+<li>Heavily utilizing Cobalt Strike, open-source tools, and native Windows/PowerShell tools and commands</li>
+<li>Short, minimal, or no persistence</li>
+<li>Lack of domain registration</li>
+<li>Defense evasion, disablement, and impersonation, combined with LOTL</li>
+<li>Anti-forensics and anti-system-recovery</li>
+<li>Anti-debugging/anti-reverse engineering</li>
+<li>Inconsistency and fluidity</li>
+<li>Communication via encrypted email services and TOX (P2P, end-to-end encrypted messaging/video)</li>
+<li>Specific targeting:<!-- -->
+<ul>
+<li>Public-facing applications and devices</li>
+<li>Critical infrastructure, schools and universities, healthcare, government, religious institutions, technology and manufacturing, and SMBs</li>
+<li>Avoiding hardened systems, and moving on when segmented networks are encountered that impede lateral movement</li>
+</ul>
+</li>
+<li>Imitating/being imitated by other ransomware groups</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="inconsistency-and-fluidity--imitating-or-being-imitated-by-other-ransomware">Inconsistency and Fluidity + Imitating (or Being Imitated By?) Other Ransomware<a href="#inconsistency-and-fluidity--imitating-or-being-imitated-by-other-ransomware" class="hash-link" aria-label="Direct link to Inconsistency and Fluidity + Imitating (or Being Imitated By?) Other Ransomware" title="Direct link to Inconsistency and Fluidity + Imitating (or Being Imitated By?) Other Ransomware">​</a></h3>
+<p>The primary differentiator for Ghost that I immediately noticed was their deliberate inconsistency and rotation of the key elements in their attack chain (having used <em>at least</em> 5 different payloads, 9-26+ encrypted file extensions, 9 different ransom notes, and 41 different email addresses to contact them). This cripples the ability of security professionals to use hashes in their detection mechanisms, and has led to major difficulties in actually tracking and attributing Ghost&#x27;s attack activity.</p>
+<p>To highlight this, see the following screenshot of the thought process of the &quot;discoverer&quot; of Ghost/Cring, Amigo-A (Andrew Ivanov):</p>
+<p><img decoding="async" loading="lazy" src="https://github.com/SirPicklJohn/ip-blog-storage/blob/main/ghost-story-media/amigo-a-2.png?raw=true" alt="amigo-a-1" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://github.com/SirPicklJohn/ip-blog-storage/blob/main/ghost-story-media/amigo-a-1.png?raw=true" alt="amigo-a-2" class="img_ev3q"></p>
+<p>Also note the comparison to the Parasite ransomware. Parallels between the two threat actors are as follows (<strong>do note that there are likely several errors or &quot;best guesses&quot; made in these analyses. I am including this information to highlight the challenges that have been experienced in attributing activity to Ghost</strong>):</p>
+<ul>
+<li>Using Tutanota encrypted emails for communication with clients (as well as several cock.li addresses).</li>
+<li>Deleting volume shadow copies.</li>
+<li>One particular infection used the .vjiszy1lo extension for encrypted files and had a ransom (labelled &quot;HOW_CAN_GET_FILES_BACK.txt&quot;) with two emails used by Ghost.</li>
+<li><a href="https://www.bleepingcomputer.com/forums/t/745245/parasite-wiper-ransomware-parasite-betarasite-paras1te-support-topic/?ref=infophreak.com" target="_blank" rel="noopener noreferrer">This blog post</a> (see image below) and <a href="https://id-ransomware.blogspot.com/2021/01/parasite-ransomware.html?ref=infophreak.com" target="_blank" rel="noopener noreferrer">this article</a> by Amigo-A, which links several ransom note filenames and several extensions that Ghost is known to use to Parasite.<!-- -->
+<ul>
+<li><img decoding="async" loading="lazy" src="https://github.com/SirPicklJohn/ip-blog-storage/blob/main/ghost-story-media/bleep-1.png?raw=true" alt="blog-post-1" class="img_ev3q"></li>
+</ul>
+</li>
+<li>The ransomware recovery company Elastio linked the .phantom extension, the &quot;HOW_CAN_GET_FILES_BACK.txt/rtf&quot; ransom note names, &quot;Ghost.exe&quot;, and several emails to both Parasite and Ghost (see <a href="https://elastio.com/parasite/?ref=infophreak.com" target="_blank" rel="noopener noreferrer">this link</a> for Elastio&#x27;s page on Parasite, and <a href="https://elastio.com/detectable-ransomware/cring/?ref=infophreak.com" target="_blank" rel="noopener noreferrer">this link</a> for the page on Ghost). There are likely errors or a lack of verification in Elastio&#x27;s assessment, and I suspect they referenced Amigo-A&#x27;s research/the BleepingComputer forum posts referenced throughout this article.</li>
+<li>These groups developed around the same time (Ghost emerged in December 2020, while Parasite is believed to have emerged January 2021).
+Some possible explanations for these parallels are as follows:</li>
+<li>The researchers above could have made mistakes or didn&#x27;t verify their sources before making these claims.</li>
+<li>Ghost could have links to Parasite, or they could be the same threat actor.</li>
+<li>Ghost and/or Parasite may have purposefully adopted some of the tactics/attributes of the other in order to make attribution harder.
+Again, <strong>I include this information only to highlight the observed challenges in definitively attributing activity to Ghost.</strong></li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="defense-evasion-defense-deactivation-and-tool-choice-including-lotl">Defense Evasion, Defense Deactivation, and Tool Choice (Including LOTL)<a href="#defense-evasion-defense-deactivation-and-tool-choice-including-lotl" class="hash-link" aria-label="Direct link to Defense Evasion, Defense Deactivation, and Tool Choice (Including LOTL)" title="Direct link to Defense Evasion, Defense Deactivation, and Tool Choice (Including LOTL)">​</a></h3>
+<p>Another strong component of Ghost&#x27;s success lies in their strong defense-evasion techniques. They use encoded PowerShell commands, Windows Command Shell commands, and the Windows Management Interface (WMI), which are all built-in to Windows systems and are commonly used for IT administration. Additionally, legitimate services like SMB and RDP are abused.</p>
+<p>Ghost also heavily relies on Cobalt Strike (which uses HTTP/HTTPS and can blend in with legitimate traffic) and the following set of open source tools:</p>
+<ul>
+<li>IOX - Used as an open-source reverse proxy to a Ghost C2 server from a victim device on the network.</li>
+<li>Exploitation and Lateral Movement:<!-- -->
+<ul>
+<li>Publicly-known and unpatched vulnerabilities that lead to initial access without user interaction</li>
+<li>Ladon 911 - Exploits two EternalBlue vulnerabilities (<a href="https://rootedshell.medium.com/ms17-010-eternalblue-57692e719768?ref=infophreak.com" target="_blank" rel="noopener noreferrer">CVE-2017-0143 and 0144 in advisory MS17010</a>)</li>
+</ul>
+</li>
+<li>Enumeration:<!-- -->
+<ul>
+<li>SharpShares.exe</li>
+<li>SpnDump.exe</li>
+<li>NBT.exe</li>
+</ul>
+</li>
+<li>Privilege Escalation:<!-- -->
+<ul>
+<li>SharpZeroLogon.exe - Used to exploit <a href="https://nvd.nist.gov/vuln/detail/CVE-2020-1472?ref=infophreak.com" target="_blank" rel="noopener noreferrer">CVE-2020-1472</a> (escalation of privilege using MS-NRPC) against a Domain Controller.</li>
+<li>SharpGPPPass.exe - Attempts to exploit <a href="https://nvd.nist.gov/vuln/detail/CVE-2014-1812?ref=infophreak.com" target="_blank" rel="noopener noreferrer">CVE-2014-1812</a></li>
+<li>BadPotato.exe</li>
+<li>God.exe (GodPotato)</li>
+</ul>
+</li>
+<li>Persistence:<!-- -->
+<ul>
+<li>Web Shell - Executes commands and facilitates persistent access</li>
+</ul>
+</li>
+<li>Exfiltration:<!-- -->
+<ul>
+<li>HFS (HTTP File Server)
+See <a href="https://www.cisa.gov/sites/default/files/2025-02/aa25-050a-stopransomware-ghost-cring-ransomware.pdf?ref=infophreak.com" target="_blank" rel="noopener noreferrer">this list of tools and executables</a>, with more details, in the joint-report from the FBI and CISA [pages 5-6]!</li>
+</ul>
+</li>
+</ul>
+<p>A common Ghost attack chain will include using Cobalt Strike to display a list of all running processes, using that to determine a running antivirus solution on the system, and then using a PowerShell command like the following to disable it (in this case, Windows Defender is being disabled):
+<code>Set-MpPreference -DisableRealtimeMonitoring 1 -DisableIntrusionPreventionSystem 1 -DisableBehaviorMonitoring 1 -DisableScriptScanning 1 -DisableIOAVProtection 1 -EnableControlledFolderAccess Disabled -MAPSReporting Disabled -SubmitSamplesConsent NeverSend</code>.</p>
+<p>However, what about EDR, IDPS, and SIEM? According to an analysis by Vectra.ai (<a href="https://www.vectra.ai/blog/ghost-ransomware-striking-before-you-even-know-its-there?ref=infophreak.com" target="_blank" rel="noopener noreferrer">linked here</a>), Ghost&#x27;s fast operation/TTR, abuse of legitimate applications, lack of long-term persistence, and other detection evasion methods are sufficient enough to bypass known attack signatures, rule-based detection, and even pattern-analysis/behavioral baselines.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="payload-behavior-anti-forensics-anti-debuggingre-and-anti-system-recovery">Payload Behavior: Anti-Forensics, Anti-Debugging/RE, and Anti-System Recovery<a href="#payload-behavior-anti-forensics-anti-debuggingre-and-anti-system-recovery" class="hash-link" aria-label="Direct link to Payload Behavior: Anti-Forensics, Anti-Debugging/RE, and Anti-System Recovery" title="Direct link to Payload Behavior: Anti-Forensics, Anti-Debugging/RE, and Anti-System Recovery">​</a></h3>
+<p>Ghost&#x27;s ransomware payloads employ several tactics that make it <em>even harder</em> for security analysts to detect and analyze them, while simultaneously disabling backup and recovery processes. Cross-referencing the MD5 hashes of Ghost&#x27;s malware (as provided in the CISA/FBI security advisory) with the Hybrid Analysis database revealed the following anti-recovery behaviors:</p>
+<ul>
+<li>Deleting files with the &quot;<code>.VHD, .bac, .bak, .sbcat, .bkf, .set, .win, and .dsk</code>&quot; extensions, which are all related to backups</li>
+<li>Disabling the system&#x27;s volume shadow copy service</li>
+<li>Deleting volume shadow copies</li>
+<li>Killing processes related to the Veritas backup solution, such as the <code>BMR Boot Service</code> and <code>NetBackup BMR MTFTP Service</code></li>
+<li>Killing telemetry processes related to MS SQL Server, allowing database files to be encrypted
+Source: Hybrid Analysis Report for c5d712f82d5d37bb284acd4468ab3533 (Cring.exe - labelled in Hybrid Analysis as <code>file</code>)
+This sample also exhibited the following evasive mechanisms:</li>
+<li>Exhibiting <a href="https://attack.mitre.org/techniques/T1055/?ref=infophreak.com" target="_blank" rel="noopener noreferrer">MITRE ATT&amp;CK technique T1055 (Process Injection)</a> by allocating virtual memory in a separate live process (which could suggest privilege escalation and/or anti-detection behavior).</li>
+<li>Being programmed to sleep (take no action) for 1566804069 milliseconds (approximately 18 days) at some point in its execution, which could indicate anything from detection evasion, to hiding behavior when being analyzed, to facilitating communication with C2 servers (or, of course, something totally innocuous).</li>
+<li>Allocating memory with PAGE_GUARD access rights, which act as a one-time alarm to detect and protect against the memory page being accessed. In the context of malicious software, this could indicate that the malware is protecting from or detecting the usage of a debugger.
+Finally, while I didn&#x27;t see it in this sample, other ransomware payloads that Ghost has used also clear Windows Event Logs, in addition to the above activity.</li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://raw.githubusercontent.com/SirPicklJohn/ip-blog-storage/refs/heads/main/ghost-story-media/kill.bat%20process%20tree.png" alt="kill.bat process tree" class="img_ev3q"></p>
+<p>(MD5 of kill.bat: fe0ccc3a60e1a5b27c055ec36e62e9e0)</p>
+<p>Note that, according to <a href="https://web.archive.org/web/20230212083833/https://ics-cert.kaspersky.com/publications/reports/2021/04/07/vulnerability-in-fortigate-vpn-servers-is-exploited-in-cring-ransomware-attacks/" target="_blank" rel="noopener noreferrer">Kaspersky&#x27;s analysis</a> (corroborated with what I saw from the Hybrid Analysis report), Ghost attacks have been observed to occur as follows:</p>
+<ol>
+<li>After gaining initial access, Ghost operators downloaded the &quot;execute.bat&quot; file in a temporary folder.</li>
+<li>&quot;execute.bat&quot; launches a PowerShell command under the name kaspersky, mimicking the antivirus running on the system. This command downloaded a file from a Ghost C2 server and saved it as C:__output:</li>
+</ol>
+<ul>
+<li><img decoding="async" loading="lazy" src="https://github.com/SirPicklJohn/ip-blog-storage/blob/main/ghost-story-media/ghost-powershell-1.png?raw=true" alt="ghost-powershell-1" class="img_ev3q"> (Note that, while the downloaded file was called ip.txt, it is actually the executable EXE ransomware payload. When connecting to the malware-hosting C2 server via a web browser, this file had been deleted and replaced with a newer ransomware payload called NoNet.txt)</li>
+</ul>
+<ol start="3">
+<li>The downloaded malware created a batch file called kill.bat that executed the following series of actions: (details stated earlier in this section)</li>
+</ol>
+<ul>
+<li>Stopped backup services (as done in the Hybrid Analysis report earlier).</li>
+<li>Stopped the SstpSvc service that creates VPN connections, making it so system administrators could not connect to the system via VPN and respond in a timely manner.</li>
+<li>Terminated application processes that could hinder file encryption (as done in the Hybrid Analysis report earlier with mspub and Oracle MyDesktop services).</li>
+<li>Deleted locally-stored backup files (as done in the Hybrid Analysis report earlier).</li>
+<li><img decoding="async" loading="lazy" src="https://github.com/SirPicklJohn/ip-blog-storage/blob/main/ghost-story-media/ghost-powershell-2.png?raw=true" alt="ghost-powershell-2" class="img_ev3q"></li>
+<li>Deleted itself.</li>
+</ul>
+<ol start="4">
+<li>The malware started encrypting files with AES, with the encryption key in turn being encrypted with a hard-coded RSA public key of 8,192 bits.</li>
+<li>The malware dropped a ransom note.</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="short-minimal-or-no-persistence-moving-quickly">Short, Minimal, or No Persistence (&quot;Moving Quickly&quot;)<a href="#short-minimal-or-no-persistence-moving-quickly" class="hash-link" aria-label="Direct link to Short, Minimal, or No Persistence (&quot;Moving Quickly&quot;)" title="Direct link to Short, Minimal, or No Persistence (&quot;Moving Quickly&quot;)">​</a></h3>
+<p>As mentioned earlier, Ghost avoids long-term persistence, and like many other modern and high-performing ransomware gangs, is trending towards a regularly low TTR (&quot;Time-to-Ransom&quot; from initial access) of mere hours or days. This rapid turnaround, combined with the other evasive mechanisms and tactics that Ghost employs, can make it difficult for security tools or analysts to collect and analyze data, detect abnormalities and identify malicious behavior, and then effectively respond.</p>
+<p>I thought the following claim in an analysis by Vectra was incredibly thought-provoking:</p>
+<blockquote>
+<p><em>&quot;Traditional security is too slow - only AI can stop Ghost in time.&quot;</em></p>
+</blockquote>
+<p>Despite being a biased transition into an audacious marketing statement for AI-powered behavioral analysis and automated response, I mention this quote because there is a lot of truth to it, and it uncomfortably paints a very real and developing picture of adversaries that are simply too fast for certain defenses to be effective.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="tailoring-attacks-to-the-victim-and-not-demanding-millions">Tailoring Attacks to the Victim and NOT Demanding Millions<a href="#tailoring-attacks-to-the-victim-and-not-demanding-millions" class="hash-link" aria-label="Direct link to Tailoring Attacks to the Victim and NOT Demanding Millions" title="Direct link to Tailoring Attacks to the Victim and NOT Demanding Millions">​</a></h3>
+<p>Another reason why Ghost is so successful likely lies in how they tailor their attacks to victims on a case-by-case basis, which includes parameters ranging from impersonating the victim&#x27;s security software (as mentioned earlier in the case study by Kaspersky) to the way they set the price-points of their ransom demands.</p>
+<p>According to securityintelligence.com, the average ransom demand in 2024 rose to $2.73 million (from about $1 million in 2023), and the average ransom demand for healthcare organizations exceeded $5.2 million in the first half of 2024 (with high-profile incidents reaching over $20 million). However, there are many organizations that would have a really hard time forking out a million (or several million) dollars at the drop of a hat. Additionally, there are many organizations, like small to medium sized business/health practices, that simply would not be able to pay <em>that</em> much, <em>that</em> spontaneously. Forcing organizations into a corner like this can make them feel like they have no choice but to involve law enforcement and/or not pay the demand. As stated earlier, Ghost specifically demands &quot;more reasonable&quot; payments in the tens to hundreds of thousands of dollars, which organizations can justify paying much more.</p>
+<p>Additionally, it has been cited that the impact of a Ghost ransomware attack varies significantly on a victim-by-victim basis. These deliberate and surgical attacks (combined with the earlier-mentioned disabling of backup/recovery methods) put victims in a situation where they have a much harder time refusing to pay a ransom.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="specific-targeting">Specific Targeting<a href="#specific-targeting" class="hash-link" aria-label="Direct link to Specific Targeting" title="Direct link to Specific Targeting">​</a></h3>
+<p>Ghost only targets <strong>internet facing applications and devices that have known, unpatched vulnerabilities <em>WHILE</em> avoiding or moving on from segmented networks that prevent lateral movement.</strong> The following is a rundown of Ghost&#x27;s targets:</p>
+<ul>
+<li>Seemingly indiscriminately-targeted VPNs, firewalls, and network appliances.</li>
+<li>All of the sectors that are typically the most profitable and consequential for ransomware operators to target (critical infrastructure, healthcare, schools and universities, government institutions, religious institutions, technology and manufacturing, and small-to-medium-sized businesses).</li>
+<li>Targets residing in 70+ countries. While Ghost is supposedly linked to China (diving more into their origins is out-of-scope of this report), they also target internet-facing Chinese systems all the same.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="communication-via-encrypted-email-services-and-tox">Communication via Encrypted Email Services and TOX<a href="#communication-via-encrypted-email-services-and-tox" class="hash-link" aria-label="Direct link to Communication via Encrypted Email Services and TOX" title="Direct link to Communication via Encrypted Email Services and TOX">​</a></h3>
+<p>Most ransomware gangs post an onion link to the dark web (with an access key or username/password login) in their ransomware notes (see feeds like ransomlook.io for a list of ransomware gangs and their notes). In Ghost&#x27;s ransomware notes, on the other hand, they typically provide 1-2 email addresses that are registered via encrypted email services like Proton Mail and Tutanota for victims to contact and start the payment/decryption process. A full list of <strong>41-known emails</strong> (including 8 not in the FBI/CISA report) linked to Ghost are in the &quot;Aggregated IoC&#x27;s&quot; section at the end of this report. Additionally, the CISA/FBI report mentioned that Ghost also uses the TOX peer-to-peer, end-to-end encrypted instant messaging and video-calling protocol/application. Some of their known TOX IDs are as follows:</p>
+<ul>
+<li>EFE31926F41889DBF6588F27A2EC3A2D7DEF7D2E9E0A1DEFD39B976A49C11F0E19E03998DBDA</li>
+<li>E83CD54EAAB0F31040D855E1ED993E2AC92652FF8E8742D3901580339D135C6EBCD71002885B</li>
+</ul>
+<p>Using encrypted email services contributes to Ghost&#x27;s success in various ways:</p>
+<ul>
+<li>End-users will find it much easier to send a simple email, rather than setting up the TOR browser, accessing a .onion link, and logging into a web application.</li>
+<li>Email addresses cannot be hacked, taken over, or monitored like a web application on the Tor network can.</li>
+<li>Using a wide variety of encrypted email addresses makes attribution harder than hosting a .onion site. Additionally, it is easier to create, delete, and maintain email accounts than it is to do the same for web applications/websites on the Tor network.</li>
+<li>While administrators of the encrypted email communication services can take down Ghost&#x27;s email addresses, it isn&#x27;t an instantaneous process (typically requiring an abuse report with evidence provided by a victim, and then action taken on the part of the administrators) and doesn&#x27;t compromise the anonymity of Ghost&#x27;s operators.</li>
+<li>Applications that use the TOX protocol (like qTox) offer similar benefits (and I suspect their peer-to-peer nature eliminates the concern of takedowns by administrators, but I cannot say this definitively because I do not have experience with TOX).</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="limited-exfiltration-while-still-threatening-double-extortion">Limited Exfiltration (While Still Threatening Double-Extortion)<a href="#limited-exfiltration-while-still-threatening-double-extortion" class="hash-link" aria-label="Direct link to Limited Exfiltration (While Still Threatening Double-Extortion)" title="Direct link to Limited Exfiltration (While Still Threatening Double-Extortion)">​</a></h3>
+<p>As mentioned earlier, Ghost threatens double-extortion, while not actually exfiltrating that much data (under 100 GB). This lends support to Ghost&#x27;s success for a variety of reasons:</p>
+<ul>
+<li>Threatening double-extortion (leaking data to the public, which no backup solution or action by the victim can prevent after the data has been stolen) puts victims in a difficult position that makes it even more compelling for the ransom to be paid. Even if Ghost doesn&#x27;t steal a relatively large amount of data as compared to other attacks, organizations still are forced to decide whether they can afford the risk of leakage, especially when they may not know <em>exactly</em> what data was stolen (with the safest assumption being to assume the worst).</li>
+<li>Exfiltration can be a noisy activity, and it is somewhat of an artform. There are many methods and mediums that an adversary can use for exfiltrating data, but exfiltrating <em>less</em> data generally reduces the opportunities for its detection. With Ghost&#x27;s tendency to exfiltrate less than a hundred gigabytes in their attacks (rather than hundreds to thousands of terabytes, as seen in other attacks), this increases their stealthiness. While it cannot be stated for certain if this is Ghost&#x27;s intention or not, it is just one of the many factors that either intentionally or coincidentally could help indicate why Ghost is so successful in their operations.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="side-note-ghosts-nebulous-origins">Side Note: Ghost&#x27;s Nebulous Origins<a href="#side-note-ghosts-nebulous-origins" class="hash-link" aria-label="Direct link to Side Note: Ghost&#x27;s Nebulous Origins" title="Direct link to Side Note: Ghost&#x27;s Nebulous Origins">​</a></h3>
+<p>First off, while many reports and articles say that Ghost was discovered in 2021, including the official FBI/CISA report, evidence shows that Ghost (known primarily as &quot;Cring&quot; back then) has been operating since at least December 9th, 2020, 12:49:07 (with another, less-verifiable source claiming December 7, 2020).
+<img decoding="async" loading="lazy" src="https://github.com/SirPicklJohn/ip-blog-storage/blob/main/ghost-story-media/Ghost%20Ransom%20Note%20-%20Chinese%20Note.png?raw=true" alt="Chinese-Ghost-Ransomware-Note" class="img_ev3q">
+This is trustworthy because it details one of the verified ransom note filenames (&quot;deReadME!!!&quot;) and emails known to be used by Ghost. There are three sources that contain this post:</p>
+<ul>
+<li><a href="https://www.ptt.cc/bbs/AntiVirus/M.1607489351.A.6BE.html" target="_blank" rel="noopener noreferrer">https://www.ptt.cc/bbs/AntiVirus/M.1607489351.A.6BE.html</a></li>
+<li><a href="https://www.webptt.com/cn.aspx?n=bbs/AntiVirus/M.1607489351.A.6BE.html" target="_blank" rel="noopener noreferrer">https://www.webptt.com/cn.aspx?n=bbs/AntiVirus/M.1607489351.A.6BE.html</a></li>
+<li><a href="http://www.ucptt.com/article/AntiVirus/1607489351/6BE" target="_blank" rel="noopener noreferrer">http://www.ucptt.com/article/AntiVirus/1607489351/6BE</a> (Note that this website does not support HTTPS)
+Additionally, the following sources corroborate the start of Ghost&#x27;s operations being in early December of 2020:</li>
+<li>The cited &quot;discoverer&quot; of the Ghost (back then known as Cring) ransomware, Amigo-A (Andrew Ivanov), stated this in both a forum post and his blog on the Ghost gang:<!-- -->
+<ul>
+<li><img decoding="async" loading="lazy" src="https://github.com/SirPicklJohn/ip-blog-storage/blob/main/ghost-story-media/amigo-a-3.png?raw=true" alt="amigo-a-3" class="img_ev3q"></li>
+</ul>
+</li>
+<li>&quot;Активность этого крипто-вымогателя пришлась начало декабря 2020 - середину января 2021 г...Согласно информации от пострадавших от <strong>7 декабря 2020</strong>, ранняя версия шифровала только файлы DOC и TXT.&quot; (<a href="https://id-ransomware.blogspot.com/2021/01/cring-ransomware.html" target="_blank" rel="noopener noreferrer">source of blog excerpt</a>)<!-- -->
+<ul>
+<li>Translation by Reverso Context: &quot;The activity of this crypto-extortionist occurred in early December 2020 - mid-January 2021. Aimed at English-speaking users, can spread around the world. It is reported that the victims of these attacks are industrial enterprises in some countries of Europe...According to information from the victims of <strong>December 7, 2020</strong>, the earlier version encrypted only DOC and TXT files.&quot;</li>
+</ul>
+</li>
+<li>A report by Kaspersky that states the release date of the Cring ransomware family to be December 2020 (<a href="https://web.archive.org/web/20220623175916/https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf" target="_blank" rel="noopener noreferrer">linked here</a>).</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="how-to-combat-ghost-security-recommendations">How to Combat Ghost (Security Recommendations)<a href="#how-to-combat-ghost-security-recommendations" class="hash-link" aria-label="Direct link to How to Combat Ghost (Security Recommendations)" title="Direct link to How to Combat Ghost (Security Recommendations)">​</a></h2>
+<p>Recommended actions from CISA and Kaspersky:</p>
+<ul>
+<li>Make sure the components of all (endpoint) security solutions are enabled</li>
+<li>Implement network segmentation (e.g., via VLANs) to restrict lateral movement</li>
+<li>Keep the following fully updated:<!-- -->
+<ul>
+<li>Internet-facing applications</li>
+<li>Antimalware databases</li>
+</ul>
+</li>
+<li>Implement the principle of least privilege:<!-- -->
+<ul>
+<li>Make Active Directory policies that allow users to only log into the workstations they need to</li>
+</ul>
+</li>
+<li>Block connections to industrial systems that are not required by the industrial process</li>
+<li>Store backups on a system that is different than the one the backup is for</li>
+<li>Implement EDR-type solutions on all endpoints in all networks</li>
+<li>Implement advanced security solutions:<!-- -->
+<ul>
+<li>Consider MDR/managed security solutions to leverage the knowledge and expertise of high-level security professionals</li>
+<li>Consider implementing (AI) behavioral analysis</li>
+</ul>
+</li>
+<li>Implement allowlisting/whitelisting for applications, scripts, and network traffic</li>
+<li>Disable unnecessary ports</li>
+<li>Implement anti-phishing techniques (implement phishing-resistant MFA, a strong security education and awareness training program, and advanced email filtering)
+My security recommendations that stem from the above research:</li>
+<li>Retire end-of-life servers, devices, and applications</li>
+<li>Periodically audit for out-of-date systems, for those not configured to receive auto-updates, and for those that are missing hardened security configurations</li>
+<li>Implement tamper protection on endpoint security solutions, if applicable</li>
+<li>Backup/aggregate local endpoint logs in a hardened centralized logging system
+Consider implementing behavioral analysis solutions</li>
+<li>Block PowerShell on computers that don&#x27;t need it, <em>at least</em> flagging its usage on computers with users that don&#x27;t need it</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="iocs">IoCs<a href="#iocs" class="hash-link" aria-label="Direct link to IoCs" title="Direct link to IoCs">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="names">Names:<a href="#names" class="hash-link" aria-label="Direct link to Names:" title="Direct link to Names:">​</a></h3>
+<ul>
+<li>Ghost</li>
+<li>Cring</li>
+<li>Cring Hand</li>
+<li>Crypt3r</li>
+<li>Phantom</li>
+<li>Strike</li>
+<li>Hello</li>
+<li>Wickrme</li>
+<li>HsHarada</li>
+<li>Rapture</li>
+<li>RSA Virus</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="contact-emails">Contact Emails:<a href="#contact-emails" class="hash-link" aria-label="Direct link to Contact Emails:" title="Direct link to Contact Emails:">​</a></h3>
+<table><thead><tr><th><a href="mailto:poolhackers@tutanota.com" target="_blank" rel="noopener noreferrer">poolhackers@tutanota.com</a></th><th><a href="mailto:qhooks0708@protonmail.com" target="_blank" rel="noopener noreferrer">qhooks0708@protonmail.com</a></th><th><a href="mailto:rsaecho@tutanota.com" target="_blank" rel="noopener noreferrer">rsaecho@tutanota.com</a></th></tr></thead><tbody><tr><td><a href="mailto:brendasrivera@tutanota.com" target="_blank" rel="noopener noreferrer">brendasrivera@tutanota.com</a></td><td><a href="mailto:securityaccounts@tutanota.com" target="_blank" rel="noopener noreferrer">securityaccounts@tutanota.com</a></td><td><a href="mailto:etira@tutanota.com" target="_blank" rel="noopener noreferrer">etira@tutanota.com</a></td></tr><tr><td><a href="mailto:JulioErick@tutanota.com" target="_blank" rel="noopener noreferrer">JulioErick@tutanota.com</a> (unverified)</td><td><a href="mailto:payorleak@cock.li" target="_blank" rel="noopener noreferrer">payorleak@cock.li</a> (unverified)</td><td><a href="mailto:asauribe@tutanota.com" target="_blank" rel="noopener noreferrer">asauribe@tutanota.com</a></td></tr><tr><td><a href="mailto:ghostbackup@skiff.com" target="_blank" rel="noopener noreferrer">ghostbackup@skiff.com</a></td><td><a href="mailto:rainbowforever@tutanota.com" target="_blank" rel="noopener noreferrer">rainbowforever@tutanota.com</a></td><td><a href="mailto:cringghost@skiff.com" target="_blank" rel="noopener noreferrer">cringghost@skiff.com</a></td></tr><tr><td><a href="mailto:ghosts1337@skiff.com" target="_blank" rel="noopener noreferrer">ghosts1337@skiff.com</a></td><td><a href="mailto:retryit1998@mailfence.com" target="_blank" rel="noopener noreferrer">retryit1998@mailfence.com</a></td><td><a href="mailto:crptbackup@skiff.com" target="_blank" rel="noopener noreferrer">crptbackup@skiff.com</a></td></tr><tr><td><a href="mailto:ghosts1337@tuta.io" target="_blank" rel="noopener noreferrer">ghosts1337@tuta.io</a></td><td><a href="mailto:retryit1998@tutamail.com" target="_blank" rel="noopener noreferrer">retryit1998@tutamail.com</a></td><td><a href="mailto:d3crypt@onionmail.org" target="_blank" rel="noopener noreferrer">d3crypt@onionmail.org</a></td></tr><tr><td><a href="mailto:ghostsbackup@skiff.com" target="_blank" rel="noopener noreferrer">ghostsbackup@skiff.com</a></td><td><a href="mailto:rsacrpthelp@skiff.com" target="_blank" rel="noopener noreferrer">rsacrpthelp@skiff.com</a></td><td><a href="mailto:d3svc@tuta.io" target="_blank" rel="noopener noreferrer">d3svc@tuta.io</a></td></tr><tr><td><a href="mailto:hsharada@skiff.com" target="_blank" rel="noopener noreferrer">hsharada@skiff.com</a></td><td><a href="mailto:rsahelp@protonmail.com" target="_blank" rel="noopener noreferrer">rsahelp@protonmail.com</a></td><td><a href="mailto:eternalnightmare@tutanota.com" target="_blank" rel="noopener noreferrer">eternalnightmare@tutanota.com</a></td></tr><tr><td><a href="mailto:just4money@tutanota.com" target="_blank" rel="noopener noreferrer">just4money@tutanota.com</a></td><td><a href="mailto:sdghost@onionmail.org" target="_blank" rel="noopener noreferrer">sdghost@onionmail.org</a></td><td><a href="mailto:evilcorp@skiff.com" target="_blank" rel="noopener noreferrer">evilcorp@skiff.com</a></td></tr><tr><td><a href="mailto:kellyreiff@tutanota.com" target="_blank" rel="noopener noreferrer">kellyreiff@tutanota.com</a></td><td><a href="mailto:shadowghost@skiff.com" target="_blank" rel="noopener noreferrer">shadowghost@skiff.com</a></td><td><a href="mailto:fileunlock@onionmail.org" target="_blank" rel="noopener noreferrer">fileunlock@onionmail.org</a></td></tr><tr><td><a href="mailto:kev1npt@tuta.io" target="_blank" rel="noopener noreferrer">kev1npt@tuta.io</a></td><td><a href="mailto:shadowghosts@tutanota.com" target="_blank" rel="noopener noreferrer">shadowghosts@tutanota.com</a></td><td><a href="mailto:fortihooks@protonmail.com" target="_blank" rel="noopener noreferrer">fortihooks@protonmail.com</a></td></tr><tr><td><a href="mailto:lockhelp1998@skiff.com" target="_blank" rel="noopener noreferrer">lockhelp1998@skiff.com</a></td><td><a href="mailto:summerkiller@mailfence.com" target="_blank" rel="noopener noreferrer">summerkiller@mailfence.com</a></td><td><a href="mailto:genesis1337@tutanota.com" target="_blank" rel="noopener noreferrer">genesis1337@tutanota.com</a></td></tr><tr><td><a href="mailto:r.heisler@skiff.com" target="_blank" rel="noopener noreferrer">r.heisler@skiff.com</a></td><td><a href="mailto:summerkiller@tutanota.com" target="_blank" rel="noopener noreferrer">summerkiller@tutanota.com</a></td><td><a href="mailto:ghost1998@tutamail.com" target="_blank" rel="noopener noreferrer">ghost1998@tutamail.com</a></td></tr><tr><td><a href="mailto:rainbowforever@skiff.com" target="_blank" rel="noopener noreferrer">rainbowforever@skiff.com</a></td><td><a href="mailto:webroothooks@tutanota.com" target="_blank" rel="noopener noreferrer">webroothooks@tutanota.com</a></td><td></td></tr></tbody></table>
+<p><em>For disclosure: the 33 emails provided in the CISA/FBI report are assumed to be verified. The above list is 41 emails large.</em>
+Services: Tutanota/Tutamail/Tuta.io, Skiff, Mailfence, OnionMail, ProtonMail, and potentially one from Cock.li</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="payloads">Payloads:<a href="#payloads" class="hash-link" aria-label="Direct link to Payloads:" title="Direct link to Payloads:">​</a></h3>
+<ul>
+<li>Verified:<!-- -->
+<ul>
+<li>cring.exe</li>
+<li>Ghost.exe</li>
+<li>Elysium0.exe</li>
+<li>Elysium.exe</li>
+<li>Locker.exe</li>
+<li>file.exe</li>
+<li>iex.txt, pro.txt (listed as IOX proxy IoCs from CISA)</li>
+<li>ip.txt</li>
+<li>NoNet.txt</li>
+<li>C:\__output.txt</li>
+</ul>
+</li>
+<li>&quot;Helper&quot; Files:<!-- -->
+<ul>
+<li>execute.bat</li>
+<li>kill.bat</li>
+</ul>
+</li>
+<li>Unverified (and associated with the Parasite ransomware as well):<!-- -->
+<ul>
+<li>848299.exe</li>
+<li>SchoolPrject1.exe</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="extensions">Extensions<a href="#extensions" class="hash-link" aria-label="Direct link to Extensions" title="Direct link to Extensions">​</a></h3>
+<p>Verified:</p>
+<ul>
+<li>.cring</li>
+<li>.ghosts</li>
+<li>.RSA / .rsa</li>
+<li>.vjiszy1lo</li>
+<li>.phantom</li>
+<li>.VnBeHa99y<!-- -->
+<ul>
+<li><em>Note</em>: Verified from verified emails in the ransom note.</li>
+</ul>
+</li>
+<li>.just4money</li>
+<li>.jpghosts<!-- -->
+<ul>
+<li><em>Note</em>: Verified from being associated in a forum with an attack that used a verified ransom note (HOW_CAN_GET_FILES_BACK.rtf).</li>
+</ul>
+</li>
+<li>.pay4it</li>
+</ul>
+<p>Semi-Verified: (based off of the verified email address with the same name)</p>
+<ul>
+<li>.sg-ghosts</li>
+<li>.sgghosts</li>
+</ul>
+<p>Unverified: (but associated with an unverified/unverifiable source that has verified information)</p>
+<ul>
+<li>.BeHappy</li>
+<li>.D0ntW0rry</li>
+<li>.GetMoney</li>
+<li>.Gets</li>
+<li>.KrB3Ha99y</li>
+<li>.KrDontCry &lt; note that a Hybrid Analysis heuristics text match in an analysis of cring.exe has the message &quot;DontCry :)&quot;</li>
+<li>.Spanishghost</li>
+<li>.Welcomeghost</li>
+<li>.dkghost</li>
+<li>.rsaes &lt; note that this likely (and cheekily) refers to the RSA + AES algorithms used in encryption</li>
+<li>.ryuks</li>
+<li>.lldc</li>
+<li>.locked</li>
+<li>.sg-Geister</li>
+</ul>
+<p>Totally Unverified and Unverifiable: (and unassociated with anything verifiable)</p>
+<ul>
+<li>.4nMaJj</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ransom-notes">Ransom Notes:<a href="#ransom-notes" class="hash-link" aria-label="Direct link to Ransom Notes:" title="Direct link to Ransom Notes:">​</a></h3>
+<ul>
+<li>
+<p>!!!!WrReadMe!!!.rtf</p>
+<p><img decoding="async" loading="lazy" src="https://github.com/SirPicklJohn/ip-blog-storage/blob/main/ghost-story-media/Ghost%20Ransom%20Note%201%20-%20Kasepersky.png?raw=true" alt="" class="img_ev3q"></p>
+<p>Source: <a href="https://web.archive.org/web/20230212083833/https://ics-cert.kaspersky.com/publications/reports/2021/04/07/vulnerability-in-fortigate-vpn-servers-is-exploited-in-cring-ransomware-attacks/" target="_blank" rel="noopener noreferrer">Kaspersky Cring Analysis Report</a> (April 2021)</p>
+</li>
+<li>
+<p>!!!!deReadMe!!!.txt
+<code>Sorry, your network is encrypted, and encryption is achieved through RSA-8192, which means that the decryption service can only be provided by us. You cannot decrypt data through a security company. They will only contact us to pay the fee. We recommend that you pay 2 bitcoins directly to us , Or send two files to confirm whether we can decrypt, you need to deal with it as soon as possible, because the key file necessary for decryption will not be kept.     Contact:   poolhackers@tutanota.com    eternalnightmare@tutanota.com</code></p>
+<p>Source: <a href="https://howtofix.guide/rsa-virus/" target="_blank" rel="noopener noreferrer">HowToFix Guide on &quot;The RSA/Cring Virus&quot;</a> (February 2021)</p>
+</li>
+<li>
+<p>Unknown Name
+<code>Oops, your computer is encrypted. You need to pay 2 bitcoins to decrypt the files you need. If you dont reply within three days, you wont be able to get the decryption service. Contact: qkhooks0708 @protonmail.com</code></p>
+<p>Source: Heuristics text match in a Hybrid Analysis report for Cring.exe (MD5: c5d712f82d5d37bb284acd4468ab3533) (2021)</p>
+</li>
+<li>
+<p>deReadMe!!!.txt</p>
+<p><img decoding="async" loading="lazy" src="https://github.com/SirPicklJohn/ip-blog-storage/blob/main/ghost-story-media/Ghost%20Ransom%20Note%20-%20SensorTech.png?raw=true" alt="" class="img_ev3q"></p>
+<p>Source: <a href="https://sensorstechforum.com/remove-cring-ransomware/" target="_blank" rel="noopener noreferrer">Sensors Tech Forum - Removing the Cring Ransomware</a> (January 2023)</p>
+</li>
+<li>
+<p>!!!deReadMe!!!.rtf</p>
+<p><img decoding="async" loading="lazy" src="https://github.com/SirPicklJohn/ip-blog-storage/blob/main/ghost-story-media/ghost-ransom-note-7.png?raw=true" alt="" class="img_ev3q"></p>
+<p>Source: <a href="https://www.trendmicro.com/ja_jp/research/21/e/damage-is-spreading-in-japan-from-the-cring-ransomware-that-infiltrates-systems-using-vpn-vulnerabilities.html" target="_blank" rel="noopener noreferrer">Japanese Trend Micro Report on Cring</a></p>
+</li>
+<li>
+<p>deReadME!!! &quot;Notepad&quot; (This is the oldest attack I could find from Ghost, traced back to December 9, 2020!)</p>
+<p><img decoding="async" loading="lazy" src="https://github.com/SirPicklJohn/ip-blog-storage/blob/main/ghost-story-media/Ghost%20Ransom%20Note%20-%20Chinese%20Note.png?raw=true" alt="" class="img_ev3q"></p>
+<p>Source: Three different articles to the same post on December 9th, 12:49:07, 2020:</p>
+<ul>
+<li><a href="https://www.ptt.cc/bbs/AntiVirus/M.1607489351.A.6BE.html" target="_blank" rel="noopener noreferrer">https://www.ptt.cc/bbs/AntiVirus/M.1607489351.A.6BE.html</a></li>
+<li><a href="https://www.webptt.com/cn.aspx?n=bbs/AntiVirus/M.1607489351.A.6BE.html" target="_blank" rel="noopener noreferrer">https://www.webptt.com/cn.aspx?n=bbs/AntiVirus/M.1607489351.A.6BE.html</a></li>
+<li><a href="http://www.ucptt.com/article/AntiVirus/1607489351/6BE" target="_blank" rel="noopener noreferrer">http://www.ucptt.com/article/AntiVirus/1607489351/6BE</a> (<em>Note.</em> UCPTT does not support a secure HTTPS connection)</li>
+</ul>
+</li>
+<li>
+<p>HOW_TO_GET_FILES_BACK.txt</p>
+<p><img decoding="async" loading="lazy" src="https://github.com/SirPicklJohn/ip-blog-storage/blob/main/ghost-story-media/ghost-ransom-note-5.png?raw=true" alt="" class="img_ev3q"></p>
+<p>Source: <a href="https://www.bleepingcomputer.com/forums/t/741312/crypt3r-cringeghostcring-ransomware-cring-phantom-support-topic/page-2" target="_blank" rel="noopener noreferrer">BleepingComputer Forums</a> (2021, March)</p>
+</li>
+<li>
+<p>HOW_CAN_GET_FILES_BACK.txt and HOW_CAN_GET_FILES_BACK.rtf</p>
+<p><img decoding="async" loading="lazy" src="https://github.com/SirPicklJohn/ip-blog-storage/blob/main/ghost-story-media/ghost-ransom-note-6.png?raw=true" alt="" class="img_ev3q"></p>
+<p>Sources:</p>
+<ul>
+<li><a href="https://www.pcrisk.com/removal-guides/20464-ghost-ransomware" target="_blank" rel="noopener noreferrer">PCRisk Ghost Ransomware Overview and Removal Guide</a> (December 2023)</li>
+<li><a href="https://www.bleepingcomputer.com/forums/t/741312/crypt3r-cringeghostcring-ransomware-cring-phantom-support-topic/page-2" target="_blank" rel="noopener noreferrer">BleepingComputer Forums</a> (March 2021)</li>
+<li><a href="https://id-ransomware.malwarehunterteam.com/identify.php?case=8170ac15da1428c669a9c51f85e03658cd06f73c" target="_blank" rel="noopener noreferrer">ID Ransomware</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="references">REFERENCES<a href="#references" class="hash-link" aria-label="Direct link to REFERENCES" title="Direct link to REFERENCES">​</a></h2>
+<ul>
+<li>&quot;<a href="https://www.cisa.gov/sites/default/files/2025-02/aa25-050a-stopransomware-ghost-cring-ransomware.pdf" target="_blank" rel="noopener noreferrer">#StopRansomware: Ghost (Cring) Ransomware (PDF)</a>&quot; - FBI, CISA, and MS-ISAC Joint Advisory (2025, February 19)</li>
+<li>&quot;<a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-050a" target="_blank" rel="noopener noreferrer">#StopRansomware: Ghost (Cring) Ransomware (Website)</a>&quot; - CISA (2025, February 19)</li>
+<li>&quot;<a href="https://www.trendmicro.com/ja_jp/research/21/e/damage-is-spreading-in-japan-from-the-cring-ransomware-that-infiltrates-systems-using-vpn-vulnerabilities.html" target="_blank" rel="noopener noreferrer">ランサムウェア「Cring」の被害が国内で拡大、VPN脆弱性を狙い侵入</a>&quot; // &quot;Ransomware &#x27;Cring&#x27; spread in the country, intruding for VPN vulnerability&quot; (Translation by Reverso Context) - (Japanese) Trend Micro (2021, May 20)</li>
+<li>&quot;<a href="https://www.vectra.ai/blog/ghost-ransomware-striking-before-you-even-know-its-there" target="_blank" rel="noopener noreferrer">Ghost Ransomware: Striking Before You Even Know It’s There</a>&quot; - Vectra (2025, February 26)</li>
+<li>&quot;<a href="https://www.pcrisk.com/removal-guides/20464-ghost-ransomware" target="_blank" rel="noopener noreferrer">Ghost ransomware virus - removal and decryption options</a>&quot; - PCrisk (2023, December 8)</li>
+<li>&quot;<a href="https://www.bleib-virenfrei.de/it-sicherheit/ransomware/liste/" target="_blank" rel="noopener noreferrer">Ransomware-Liste inkl. Decryptor (zum Entschlüsseln)</a>&quot; (German) (2024)</li>
+<li>&quot;<a href="https://id-ransomware.blogspot.com/2021/01/cring-ransomware.html" target="_blank" rel="noopener noreferrer">Шифровальщики-вымогатели - The Digest &quot;Crypto-Ransomware: Cring Hand-Ransomware, Crypt3r Ransomware, Variants: CRING, RSA, Vjiszy1lo, Ghost, Phantom, VnBeHa99y, Pay4it</a>&quot; - (Russian) Amigo-A (2021, January 14)</li>
+<li>&quot;<a href="https://id-ransomware.blogspot.com/2021/01/parasite-ransomware.html" target="_blank" rel="noopener noreferrer">Шифровальщики-вымогатели - The Digest &quot;Crypto-Ransomware: Parasite Ransomware, Aliases: SharpCrypter, Paralock</a>&quot; - (Russian) Amigo-A (2021, January 4)</li>
+<li>&quot;<a href="https://elastio.com/detectable-ransomware/cring/" target="_blank" rel="noopener noreferrer">Ransomware Research - Cring</a>&quot; - elastio (n.d.)</li>
+<li>&quot;<a href="https://elastio.com/parasite/" target="_blank" rel="noopener noreferrer">Ransomware Research - Parasite</a>&quot; elastio (n.d.)</li>
+<li>&quot;<a href="https://ioc.one/auth/pdf/6d2555dc-6527-4dbb-96ce-edf971c69a91" target="_blank" rel="noopener noreferrer">2022 年 6 月勒索病毒态势分析</a>&quot; - (Chinese) ioc.one (???) &lt; <em>If you can find out more from this source, please let me know!</em></li>
+<li>&quot;<a href="https://web.archive.org/web/20221203155022/https://www.cert.org.cn/publish/main/upload/File/Cncert%20Ransomware%20Report%20202233.pdf" target="_blank" rel="noopener noreferrer">国家互联网应急中心（CNCERT/CC) - 勒索软件动态周报</a>&quot; - (Chinese Intelligence Report on Ransomware) (2022, June) &lt; <em>Translated and summarized with GPT-4o via duck.ai, and with Reverso Context</em></li>
+<li>&quot;<a href="https://sectrio.com/wp-content/uploads/2022/05/Starmoon-Ransomware-.pdf" target="_blank" rel="noopener noreferrer">Sectrio Malware Report</a>&quot; (2022) &lt; <em>Only used in a rabbit hole I went down to see whether or not I could trust a different source that provided potential emails used by Ghost (like starmoon@my[.]com, bleepbloopbop@protonmail[.]com, and r3wuq@tuta[.]io). I found that I couldn&#x27;t and these emails are likely not related to Ghost.</em></li>
+<li>&quot;<a href="https://hackread.com/vulnerable-vpn-servers-cring-ransomware/" target="_blank" rel="noopener noreferrer">Unpatched vulnerable VPN servers hit by Cring ransomware</a>&quot; (2021, April 8)<!-- -->
+<ul>
+<li>References this insightful Kaspersky report: &quot;<a href="https://ics-cert.kaspersky.com/publications/reports/2021/04/07/vulnerability-in-fortigate-vpn-servers-is-exploited-in-cring-ransomware-attacks/" target="_blank" rel="noopener noreferrer">Vulnerability in FortiGate VPN servers is exploited in Cring ransomware attacks</a>&quot; (2021, April 7)</li>
+</ul>
+</li>
+<li>&quot;<a href="https://attack.mitre.org/techniques/T1055/" target="_blank" rel="noopener noreferrer">T1055 Process Injection</a>&quot; - MITRE ATT&amp;CK (2023, March 30)</li>
+<li>&quot;<a href="https://vox.veritas.com/discussions/netbackup/services-on-nbu-clients/382239" target="_blank" rel="noopener noreferrer">Services on NBU Clients</a>&quot; - Veritas (2011)</li>
+<li>&quot;<a href="https://x.com/Amigo_A_/status/1352336054829916167" target="_blank" rel="noopener noreferrer">A new #Cring #Ransomware</a>&quot; - Amigo-A on Twitter/X (2021, January 21)</li>
+<li>&quot;<a href="https://pastebin.com/PN2a5mBC" target="_blank" rel="noopener noreferrer">!!!!deReadMe!!!.txt</a>&quot; - Pastebin from Demonslay335 (one of the researchers related to the BleepingComputer forums that initially investigated Cring) (2021, January 26th)</li>
+<li>&quot;<a href="https://www.paloaltonetworks.com/cyberpedia/what-are-malicious-newly-registered-domains" target="_blank" rel="noopener noreferrer">What Are Malicious Newly Registered Domains?</a>&quot; - Palo Alto Networks (n.d.) &lt; <em>Used, alongside AI, to determine what the advantages and drawbacks of a ransomware gang registering and hardcoding a domain versus an IP address are.</em></li>
+<li>&quot;<a href="https://dailysecurityreview.com/security-spotlight/cisa-and-fbi-report-ghost-ransomware-breached-70-countries/" target="_blank" rel="noopener noreferrer">CISA and FBI Report Ghost Ransomware Breached 70 Countries</a>&quot; (2025, February 21)</li>
+<li>&quot;<a href="https://www.al.com/news/2025/02/fbi-warns-a-cyber-attack-under-way-and-you-should-back-up-your-data.html" target="_blank" rel="noopener noreferrer">FBI warns a cyber attack under way and you should back up your data</a>&quot; (2025, February 21)</li>
+<li>&quot;<a href="https://www.forbes.com/sites/daveywinder/2025/02/22/new-fbi-warning-backup-today-as-dangerous-attacks-ongoing/" target="_blank" rel="noopener noreferrer">FBI Says Backup Now - Advisory Warns Of Dangerous Ransomware Attacks</a>&quot; (2025, February 22)</li>
+<li>&quot;<a href="https://www.itpro.com/security/ransomware/warning-issued-over-prolific-ghost-ransomware-group" target="_blank" rel="noopener noreferrer">Warning issued over prolific &#x27;Ghost&#x27; ransomware group</a>&quot; (2025, February 24)</li>
+<li>&quot;<a href="https://digital.nhs.uk/cyber-alerts/2021/cc-3818" target="_blank" rel="noopener noreferrer">Cring Ransomware</a>&quot; - England National Health Service (2021, April 13) &lt; <em>This initially led to a huge pivot off of the &quot;Vjiszy1lo&quot; name/alias associated with Ghost. Presumably the federal government will have done their due diligence and verified this information.</em></li>
+<li>&quot;<a href="https://www.bleepingcomputer.com/news/security/new-cring-ransomware-hits-unpatched-fortinet-vpn-devices/" target="_blank" rel="noopener noreferrer">New Cring ransomware hits unpatched Fortinet VPN devices</a>&quot; (2021, April 7)</li>
+<li>&quot;<a href="https://news.sophos.com/en-us/2021/09/21/cring-ransomware-group-exploits-ancient-coldfusion-server/?cmp=30728" target="_blank" rel="noopener noreferrer">Cring ransomware group exploits ancient ColdFusion server</a>&quot; (2021, September 21)</li>
+<li>&quot;<a href="https://github.com/StrangerealIntel/Shadow-Pulse/blob/main/Ransomlist.csv" target="_blank" rel="noopener noreferrer">Shadow-Pulse/Ransomlist.csv</a>&quot; (List of ransomware gangs, aliases, algorithms, etc.) &lt; <em>Note that, despite the rich information, I cannot verify any of the information in this resource as-is.</em></li>
+<li>&quot;<a href="https://web.archive.org/web/20220623175916/https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf" target="_blank" rel="noopener noreferrer">Common TTPs of modern ransomware groups</a>&quot; - Kaspersky via Wayback Machine (2022) &lt; <em>The only information utilized in this report was the graph that stated that Cring emerged in December 2020.</em></li>
+<li>&quot;<a href="https://howtofix.guide/rsa-virus/" target="_blank" rel="noopener noreferrer">RSA Virus Files of Ransomware - How to remove Cring virus?</a>&quot; (2021, February 17) &lt; <em>Do not download any tools from this article.</em></li>
+<li>&quot;<a href="https://sensorstechforum.com/remove-cring-ransomware/" target="_blank" rel="noopener noreferrer">Remove Cring Ransomware</a>&quot; (2023, January 3) &lt; <em>Do not download any tools from this article.</em></li>
+<li>&quot;<a href="https://www.bugsfighter.com/remove-cring-ransomware-and-decrypt-cring-files/" target="_blank" rel="noopener noreferrer">How to remove Cring Ransomware and decrypt .cring</a>&quot; (2021, February 17) &lt; <em>ABSOLUTELY do not download any tools from this article. One of the first links is to Afflat3b2.com, a known distributor of malware and PUPs.</em> (<a href="https://malwaretips.com/blogs/remove-afflat3b2-com/" target="_blank" rel="noopener noreferrer">Article with more information on Afflat3b2</a>)</li>
+<li>&quot;<a href="https://github.com/xtaci/smux" target="_blank" rel="noopener noreferrer">xtaci/smux</a>&quot; (Stream Multiplexing Library for golang) &lt; <em>Linked in analysis of cring.exe on Hybrid Analysis</em></li>
+<li>Ransomware Time-to-Ransom and Monetary Statistics:<!-- -->
+<ul>
+<li>&quot;<a href="https://cdn.prod.website-files.com/6579dd0b5f9a54376d296939/67aa514b46df295dec2273e4_Huntress-2025-Cyber-Threat-Report.pdf" target="_blank" rel="noopener noreferrer">2025 Cyber Threat Report</a>&quot; - Huntress (2025, February 5th) &lt; <em>Note that the data for this report is from 2024.</em>
+<ul>
+<li>Linked from this article: &quot;<a href="https://insight.scmagazineuk.com/dwell-time-reduced-further-as-attackers-infect-in-four-hours" target="_blank" rel="noopener noreferrer">Dwell Time Reduced Further as Attacker Infect in Four Hours</a>&quot; (2025, February 17)</li>
+</ul>
+</li>
+<li>&quot;<a href="https://www.secureworks.com/about/press/ransomware-dwell-time-hits-low-of-24-hours" target="_blank" rel="noopener noreferrer">Ransomware Dwell Time Hits Low Of 24 Hours</a>&quot; Secureworks/Sophos (2023, October 5)</li>
+<li>&quot;<a href="https://securityintelligence.com/articles/roundup-the-top-ransomware-stories-of-2024/" target="_blank" rel="noopener noreferrer">Roundup: The top ransomware stories of 2024</a>&quot;</li>
+</ul>
+</li>
+<li>Other Parasite/Paras1te-specific sources: (used to determine links and distinctions between Ghost and Parasite)<!-- -->
+<ul>
+<li>&quot;<a href="https://www.sonicwall.com/blog/parasite-ransomware-targeting-french-users-actively-spreading-in-the-wild" target="_blank" rel="noopener noreferrer">Parasite ransomware targeting French users actively spreading in the wild</a>&quot; (2021, February 26)</li>
+<li>&quot;<a href="https://www.checkmal.com/video/read/3511/" target="_blank" rel="noopener noreferrer">Parasite Ransomware (.arazite)</a>&quot; (2021, May 3)</li>
+<li>&quot;<a href="https://www.pcrisk.com/removal-guides/20098-paras1te-ransomware" target="_blank" rel="noopener noreferrer">How to remove Paras1te ransomware from the infected machine</a>&quot; PCrisk (2021, November 7)</li>
+<li>&quot;<a href="https://sensorstechforum.com/paras1te-ransomware/" target="_blank" rel="noopener noreferrer">Paras1te Ransomware</a>&quot; (2021, February 10)</li>
+</ul>
+</li>
+<li>BleepingComputer Forums:<!-- -->
+<ul>
+<li>&quot;<a href="https://www.bleepingcomputer.com/forums/t/741312/crypt3r-cringeghostcring-ransomware-cring-phantom-support-topic/page-2" target="_blank" rel="noopener noreferrer">Crypt3r (Cringe/Ghost/Cring) Ransomware (.cring, .phantom) Support Topic</a>&quot; (2021, January 19)</li>
+<li>&quot;<a href="https://www.bleepingcomputer.com/forums/t/748552/ransomware-infected-file-extensionpay4it/" target="_blank" rel="noopener noreferrer">Ransomware infected, File extension.Pay4IT</a>&quot; (2021, April 10)</li>
+<li>&quot;<a href="https://www.bleepingcomputer.com/forums/t/760454/ransomware-cring-hand-crypt3r/" target="_blank" rel="noopener noreferrer">ransomware Cring Hand - Crypt3r</a>&quot; (2021, October 24)</li>
+<li>&quot;<a href="https://rootedshell.medium.com/ms17-010-eternalblue-57692e719768" target="_blank" rel="noopener noreferrer">MS17-010 - ETERNALBLUE - Exploit</a>&quot; (2020, January 22)</li>
+<li>&quot;<a href="https://www.bleepingcomputer.com/forums/t/745679/vjiszy1lo-extension-no-ransom-note/" target="_blank" rel="noopener noreferrer">.vjiszy1lo extension, no ransom note.</a>&quot; (2021, March 4)</li>
+</ul>
+</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/SirPicklJohn/sirpickljohn.github.io/docs/cti-investigations/ghost-ransomware-gang-analysis-and-new-insights.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/cti-investigations/demonstration-of-modern-LLM-abuse"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">&quot;A Demonstration of the Potential for Modern LLM Abuse by Threat Actors&quot;</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/category/--"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">  </div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#introduction" class="table-of-contents__link toc-highlight">Introduction</a></li><li><a href="#what-does-ghost-do-differently-how-does-it-compare-to-other-gangs" class="table-of-contents__link toc-highlight">What Does Ghost Do Differently? How Does It Compare To Other Gangs?</a></li><li><a href="#what-makes-ghost-uniquely-successful" class="table-of-contents__link toc-highlight">What Makes Ghost Uniquely Successful?</a><ul><li><a href="#inconsistency-and-fluidity--imitating-or-being-imitated-by-other-ransomware" class="table-of-contents__link toc-highlight">Inconsistency and Fluidity + Imitating (or Being Imitated By?) Other Ransomware</a></li><li><a href="#defense-evasion-defense-deactivation-and-tool-choice-including-lotl" class="table-of-contents__link toc-highlight">Defense Evasion, Defense Deactivation, and Tool Choice (Including LOTL)</a></li><li><a href="#payload-behavior-anti-forensics-anti-debuggingre-and-anti-system-recovery" class="table-of-contents__link toc-highlight">Payload Behavior: Anti-Forensics, Anti-Debugging/RE, and Anti-System Recovery</a></li><li><a href="#short-minimal-or-no-persistence-moving-quickly" class="table-of-contents__link toc-highlight">Short, Minimal, or No Persistence (&quot;Moving Quickly&quot;)</a></li><li><a href="#tailoring-attacks-to-the-victim-and-not-demanding-millions" class="table-of-contents__link toc-highlight">Tailoring Attacks to the Victim and NOT Demanding Millions</a></li><li><a href="#specific-targeting" class="table-of-contents__link toc-highlight">Specific Targeting</a></li><li><a href="#communication-via-encrypted-email-services-and-tox" class="table-of-contents__link toc-highlight">Communication via Encrypted Email Services and TOX</a></li><li><a href="#limited-exfiltration-while-still-threatening-double-extortion" class="table-of-contents__link toc-highlight">Limited Exfiltration (While Still Threatening Double-Extortion)</a></li><li><a href="#side-note-ghosts-nebulous-origins" class="table-of-contents__link toc-highlight">Side Note: Ghost&#39;s Nebulous Origins</a></li></ul></li><li><a href="#how-to-combat-ghost-security-recommendations" class="table-of-contents__link toc-highlight">How to Combat Ghost (Security Recommendations)</a></li><li><a href="#iocs" class="table-of-contents__link toc-highlight">IoCs</a><ul><li><a href="#names" class="table-of-contents__link toc-highlight">Names:</a></li><li><a href="#contact-emails" class="table-of-contents__link toc-highlight">Contact Emails:</a></li><li><a href="#payloads" class="table-of-contents__link toc-highlight">Payloads:</a></li><li><a href="#extensions" class="table-of-contents__link toc-highlight">Extensions</a></li><li><a href="#ransom-notes" class="table-of-contents__link toc-highlight">Ransom Notes:</a></li></ul></li><li><a href="#references" class="table-of-contents__link toc-highlight">REFERENCES</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Navigation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">Projects Directory</a></li><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/SirPicklJohn/sirpickljohn.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://linkedin.com/in/ayden-parsons" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://discord.com/invite/infophreak" target="_blank" rel="noopener noreferrer" class="footer__link-item">Infophreak (Discord)<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">&quot;The credit belongs to the man who is actually in the arena...who&#x27;s place shall never be with those cold and timid souls who neither know victory nor defeat.&quot; / / &quot;Time is fleeting. Postpone nothing. Stay present. Bring forth your best.&quot;</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/cti-investigations/_"> </a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Ayden Parsons. Built with Docusaurus, Resourcefulness, and Extensive Keyboard-Slapping.</div></div></div></footer></div>
+</body>
+</html>
